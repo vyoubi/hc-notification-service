@@ -8,6 +8,7 @@ class HcNotificationServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("Everything is fine!");
 	}
 
 }
