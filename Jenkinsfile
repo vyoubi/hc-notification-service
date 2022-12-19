@@ -7,7 +7,7 @@ pipeline {
         stage('Build Maven') {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/vyoubi/hc-notification-service']]])
-                sh 'mvn clean install'
+                sh 'mvn clean install -Dmaven.test.skip=true'
             }
         }
         stage('Build docker image') {
